@@ -9,6 +9,6 @@ function calculateTotal() {
       document.getElementById("output").textContent = "Error: Please enter valid numbers.";
     } else {
       const total = valueOne + valueTwo;
-      document.getElementById("output").textContent = `Result: ${total}`;
+      document.getElementById("output").textContent = `Total: ${total}`;
     }
   }

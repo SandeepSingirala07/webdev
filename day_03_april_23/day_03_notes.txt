@@ -1,0 +1,54 @@
+Primitive datatype & non primitiv datatype
+ECMASScript : Standars to write javascript (Latest is 15th version)
+
+
+Datatypes:
+
+Primitive							Non-primitive/Complex
+----------------					-------------------------
+  1. number							1. Object (Object & Array)
+  2. string								
+  3. boolean(true,false)
+  4. undefined(undefined)
+  5. null
+  6. symbol(ES-6)
+  7. bigint (const x = 2n ** 53n;)
+     appending n to the end of an integer literal
+
+
+Javascript - is a programming language, follows ECMASCRIPT Standards.
+ECMA - European Computer Manufacturers Association.
+ECMASCRIPT -  is a standard for the scripting languages.
+
+
+ES_5    <= june 2015
+ES_6    2015   ( const , let , class , extends , module , .......)
+ES_7    2016   
+ES_8    2017   
+ES_9    2018   
+ES_10    2019   
+ES_11    2020   
+ES_12    2021   
+ES_13    2022   
+ES_14    2023   
+ES_15    2024  
+
+
+
+	Javascript					       TypeScript
+---------------------------------------------------------
+1.strongly typed-No				  1.strongly typed-yes
+2.directly run on browser		2.not directly run on the browser
+3.interface-No					    3.interface - Yes
+4.optional parameters-No		4.optional parameters-yes
+5.interpreted language			5.compiles the code
+6.errors at runtime				  6.errors during the development time
+7.generics-no					      7.generics-yes
+
+
+How to convert typescript file to Javascript
+============================================
+1. create a typescript file and add some typescript code
+2. npm i -g typescript  && tsc <filename>.ts
+           (OR)
+    npx tsc  <filename>.ts
