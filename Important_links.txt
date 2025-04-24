@@ -3,3 +3,5 @@ zoom meeting link: https://zoom.us/j/3135105290?pwd=PvyWIFmciIjVrDkRiqb8WkQBAUAY
 Links for SQL Sessions go through them :https://drive.google.com/drive/folders/13w1RjvV-67J9vqxJEAFfyjJN-s1Iy9iA?usp=drive_link 
 
 Emiits links: https://docs.emmet.io/cheat-sheet/
+ 
+ Question links : https://docs.google.com/document/d/11AbofNWXfAzxWiD2jc5JzqmDlNDd6Ba-2fqXm0V7og8/edit?tab=t.0
