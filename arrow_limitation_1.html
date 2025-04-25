@@ -1,0 +1,18 @@
+<script>
+    // Regular Function: 'this' - how/where the function is called
+    // Arrow Function: 'this' - where the function is written
+    let user = {
+        firstName: 'virat',
+        lastName: 'kohli',
+
+        fullName1: function () { // this = user
+            console.log(this.firstName, this.lastName, this);
+        },
+        fullName2: () => {  // this = window / global
+            console.log(this.firstName, this.lastName, this);
+        }
+    }
+    user.fullName1(); // inside fullName1() , this = user
+    user.fullName2(); // 
+    // 1. arrow function shouldn't be used as object methods
+</script>
