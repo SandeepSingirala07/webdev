@@ -1,0 +1,25 @@
+<script>
+    let str1 = 'hello'; // string literals
+    let str2 = 'hello'; // string literals
+
+    let str3 = new String('hello'); // string object
+    let str4 = new String('hello'); // string object
+
+    // data type 
+    console.log(typeof str1); // string
+    console.log(typeof str3); // Object
+
+    // eval()
+    let str5 = '2+3+4';
+    console.log(eval(str5)); // 9
+
+    let str6 = new String('2+3+4');
+    console.log(eval(str6)); // String {'2+3+4'}
+
+    let str7 = str6.valueOf(); // converts string object to string literal
+    console.log(eval(str7)); // 9
+
+    console.log(str1 == str2); // true
+    console.log(str1 == str3); // true (object gets typecasted to literal)
+    console.log(str3 == str4); // false
+</script>
