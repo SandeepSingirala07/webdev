@@ -1,6 +1,7 @@
 /*1. Print the occurence of each character in a string
    input: 'entertainment'
    output: { e:3 , n:2 , t: 3 ....} */
+   console.log("Problem 1");
 
     function characterCount(str) {
         let count = {};
@@ -22,6 +23,8 @@
 /*2. Print the character which is repeated max no of times
    input: 'hello world'
    output : 'L' */
+   console.log("Problem 2");
+
    function maxRepeatedCharacter(str) {
     let count = {};
     let maxChar = '';
@@ -32,8 +35,6 @@
   
     for (let char of str) {
       count[char] = (count[char] || 0) + 1;
-      console.log(count[char]);
-  
       if (count[char] > maxCount) {
         maxChar = char;
         maxCount = count[char];
@@ -49,15 +50,19 @@
   /*3. Swap The case for Each Character in a string 
    input: 'Hello World'
    output: 'hELLO wORLD' */
+   console.log("Problem 3");
+
    function swapCase(str){
       str.s
       console.log(str);
    }
    swapCase("Hello World");
 
+   console.log("------------------------")
    /*4. Print the Abbreviation for a string
    input: 'Rabindra Nath Tagore'
    output: 'R. N. tagore' */
+   console.log("Problem 4");
 
    function printAbbreviation(str) {
     let words = str.trim().split(' '); // Split the string into words
@@ -76,7 +81,14 @@
     console.log(result);
   }
 
-  /*5*/
+  printAbbreviation("Rabindra Nath Tagore")
+
+  console.log("------------------------")
+  /*5. Shift the characters by the next character, the output should have the next char of input
+   input:  'abcxyz'
+   output: 'bcdyza'*/
+  console.log("Problem 5");
+
   function shiftCharacters(str) {
     let shifted = '';
   
@@ -92,9 +104,14 @@
   
     console.log(shifted);
   }
+  shiftCharacters("abcxyz");
 
+  console.log("------------------------")
+  /*6. Ask user to enter a sequence of parantheses and validate 
+   input: '([{ }])'
+   output : true*/
+  console.log("Problem 6");
 
-  /*6*/
   function isValidParentheses(str) {
     let stack = [];
     let map = {
@@ -115,8 +132,14 @@
   
     return stack.length === 0;
   }
+  isValidParentheses("([{ }])");
 
-  /*7*/
+  console.log("------------------------")
+  /*7. Ask user to enter a 3 letter word, print all the permutations using those 3 letters.
+    input: 'ABC'
+    output: ABC , ACB , BCA, BAC ...*/
+  console.log("Problem 7");
+
   function permute(str, answer = '') {
     if (str.length === 0) {
       console.log(answer);
@@ -130,9 +153,14 @@
       permute(left + right, answer + ch);
     }
   }
+  permute("ABC")
 
+  console.log("------------------------")
+  /*8. Ask user to enter a number and convert that to Roman value
+   input:   9    12
+   output : IX   XII*/
+  console.log("Problem 8");
 
-  /*8*/
   function intToRoman(num) {
     let val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
     let syb = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"];
@@ -148,8 +176,14 @@
   
     console.log(roman);
   }
+  intToRoman(9);
 
-/* 9*/
+  console.log("------------------------")
+/* 9. Ask user to enter a roman string and convert that to integer value
+   input:   IX    XII
+   output : 9     12*/
+console.log("Problem 9");
+
   function romanToInt(s) {
     let map = {
       'I': 1, 'V': 5, 'X': 10,
@@ -168,3 +202,4 @@
   
     console.log(num);
   }
+  romanToInt("IX");
