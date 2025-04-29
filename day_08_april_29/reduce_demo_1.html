@@ -1,0 +1,11 @@
+<script>
+    let arr = [10, 20, 30, 40, 50];
+    // find the sum of each number in the array
+
+    let sum = arr.reduce((prev, curr) => {
+        console.log(prev, curr);
+        let sum = prev + curr;
+        return sum;
+    });
+    console.log('sum is ', sum)
+</script>
