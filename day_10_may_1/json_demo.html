@@ -1,0 +1,21 @@
+<script>
+    let user = { name: 'sanjay', age: 40, add: 'bangalore' };
+
+    document.write(user);
+    alert(user);
+    sessionStorage.setItem('user', user);
+
+    // Convert object data to string
+    let userStr = JSON.stringify(user);
+
+    document.write(userStr);
+    alert(userStr);
+    sessionStorage.setItem('userStr', userStr);
+
+    let userInfo = sessionStorage.getItem('userStr');
+    console.log(userInfo.name, userInfo.age); // string
+
+    // convert string to object
+    let userObj = JSON.parse(userInfo);
+    console.log(userObj.name, userObj.age); 
+</script>

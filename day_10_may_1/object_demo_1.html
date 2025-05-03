@@ -1,18 +1,21 @@
 <script>
-    let user = { name: 'sachin', 'last name': 'Tendulkar', age: 35, add:'Mumbai'};
+    let user = { name: 'sachin', 'last name': 'tendulkar', age: 35, add: 'mumbai' };
 
-    console.log(user.name); // sachin
-    console.log(user['age']); // 35
+    console.log(user.name);  // sachin
+    console.log(user['age']) // 35
 
-    //cann't be used when obj key contains space
-    //console.log(user.last name);
-    console.log(user['last name']);
+    // . cann't be used when object key contains space
+    // console.log(user.last name);
+    console.log(user['last name']); // yes
 
-    let x ='add';
-    console.log(user.x); // undefined
-    console.log(user[x]); // mumbai
+    let x = 'add';
+    console.log(user.x);  // undefined
+    console.log(user[x]);  // mumbai
 
-    for(key in user) {
-        console.log(key + "=====" +user[key]);
+    for (key in user) {
+        console.log(key + " ====== " + user[key]);
     }
+
+    let allkeys = Object.keys(user);
+    console.log(allkeys, allkeys.length)
 </script>
