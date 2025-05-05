@@ -1,0 +1,24 @@
+<script>
+    class Student {
+        firstName = 'virat';
+        lastName = 'kohli';
+
+        fullName1() { // this = Student
+            console.log(this.firstName, this.lastName, this)
+        }
+        fullName2 = () => { // this = Student
+            console.log(this.firstName, this.lastName, this)
+        }
+    }
+    let std = new Student();
+    std.fullName1(); // regular, inside fullName1(), this = Student
+    std.fullName2(); // arrow, inside fullName1(), this = Student
+
+    setTimeout(std.fullName1, 2000); // inside fullName1(), this = window
+    setTimeout(std.fullName2, 4000); // inside fullName2(), this = student
+</script>
+
+<!-- when a function is passed as an argument to another function
+    the function i.e passed, is called callback function
+    the function that takes another function as argument is called higherOrder
+-->

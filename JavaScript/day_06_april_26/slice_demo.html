@@ -1,0 +1,17 @@
+<script>
+    let str = 'this is javascript class';
+
+    // slice(startIndex,endIndex)
+    console.log(str.slice(8, 12)); // java
+    console.log(str.slice(8)); // javascript class
+    console.log(str.slice(8, -5)); // javascript
+
+    // substring(startIndex,endIndex)  , doesn't work with -ve index
+    console.log(str.substring(8, 12)); // java
+    console.log(str.substring(8)); // javascript class
+    console.log(str.substring(8, -5)); // this is
+
+    // substr(startIndex, length)
+    console.log(str.substring(8, 12));  // java
+    console.log(str.substr(8, 12));  // start from index 8, and print next 12 characters
+</script>
