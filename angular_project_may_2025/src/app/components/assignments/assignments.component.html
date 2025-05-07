@@ -1,0 +1,49 @@
+<div>
+    <button (click)="toggleParagraph()">
+        {{ showParagraph ? 'Hide' : 'Show' }} Paragraph
+      </button>
+      
+      <p *ngIf="showParagraph">
+        Beneath the canopy of an ancient forest, where sunlight filtered through a tangle of 
+                emerald leaves, a gentle breeze stirred the moss-covered ground. Birds chirped in 
+                scattered bursts, their songs echoing softly among the towering trunks. A narrow path, 
+                barely visible beneath fallen leaves and twisted roots, wound its way deeper into the shadows, 
+                inviting the curious to explore. Time seemed slower there, as if the forest held its breath, 
+                guarding secrets older than memory. Even the air carried a hushed reverence, thick with the 
+                scent of pine and earth, whispering stories only the trees could truly remember.
+      </p>
+</div>
+<div>
+    <textarea
+  [(ngModel)]="message"
+  maxlength="100"
+  rows="4"
+  cols="50"
+  placeholder="Type your message..."
+  (input)="updateRemainingChars()"
+></textarea>
+
+<p>{{ remainingChars }} characters remaining</p>
+</div>
+<div>
+    <label for="stateSelect">Select a state:</label>
+<select id="stateSelect" [(ngModel)]="selectedState">
+  <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+</select>
+
+<p>You selected: {{ selectedState }}</p>
+</div>
+<div>
+    <input type="number" [(ngModel)]="num1" (input)="calculate()" placeholder="Enter first number" />
+<select [(ngModel)]="operator" (change)="calculate()">
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+</select>
+<input type="number" [(ngModel)]="num2" (input)="calculate()" placeholder="Enter second number" />
+
+<p>Result: {{ result }}</p>
+</div>
+
+

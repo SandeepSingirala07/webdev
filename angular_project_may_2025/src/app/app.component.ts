@@ -6,6 +6,7 @@ import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 
+
 @Component({
   selector: 'app-root',
   imports: [
@@ -13,7 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
     // CategoriesComponent,
     // CarouselComponent,
     BodyComponent,
-    FooterComponent
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
