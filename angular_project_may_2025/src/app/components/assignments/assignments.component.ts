@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -53,5 +53,37 @@ export class AssignmentsComponent {
         this.result = this.num2 !== 0 ? this.num1 / this.num2 : NaN;
         break;
     }
+  }
+
+  userInput: string = '';
+  isPassword: boolean = true;
+
+  toggleInputType() {
+    this.isPassword = !this.isPassword;
+  }
+
+  count: number = 0;
+
+  increment() {
+    this.count++;
+  }
+
+  decrement() {
+    this.count--;
+  }
+
+  reset() {
+    this.count = 0;
+  }
+
+
+  isDarkMode = false;
+
+  constructor(private renderer: Renderer2) {}
+
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+    const themeClass = this.isDarkMode ? 'dark-theme' : 'light-theme';
+    this.renderer.setAttribute(document.body, 'class', themeClass);
   }
 }

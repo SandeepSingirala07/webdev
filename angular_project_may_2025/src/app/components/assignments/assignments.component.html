@@ -1,49 +1,58 @@
 <div>
     <button (click)="toggleParagraph()">
         {{ showParagraph ? 'Hide' : 'Show' }} Paragraph
-      </button>
-      
-      <p *ngIf="showParagraph">
-        Beneath the canopy of an ancient forest, where sunlight filtered through a tangle of 
-                emerald leaves, a gentle breeze stirred the moss-covered ground. Birds chirped in 
-                scattered bursts, their songs echoing softly among the towering trunks. A narrow path, 
-                barely visible beneath fallen leaves and twisted roots, wound its way deeper into the shadows, 
-                inviting the curious to explore. Time seemed slower there, as if the forest held its breath, 
-                guarding secrets older than memory. Even the air carried a hushed reverence, thick with the 
-                scent of pine and earth, whispering stories only the trees could truly remember.
-      </p>
+    </button>
+
+    <p *ngIf="showParagraph">
+        Beneath the canopy of an ancient forest, where sunlight filtered through a tangle of
+        emerald leaves, a gentle breeze stirred the moss-covered ground. Birds chirped in
+        scattered bursts, their songs echoing softly among the towering trunks. A narrow path,
+        barely visible beneath fallen leaves and twisted roots, wound its way deeper into the shadows,
+        inviting the curious to explore. Time seemed slower there, as if the forest held its breath,
+        guarding secrets older than memory. Even the air carried a hushed reverence, thick with the
+        scent of pine and earth, whispering stories only the trees could truly remember.
+    </p>
 </div>
 <div>
-    <textarea
-  [(ngModel)]="message"
-  maxlength="100"
-  rows="4"
-  cols="50"
-  placeholder="Type your message..."
-  (input)="updateRemainingChars()"
-></textarea>
+    <textarea [(ngModel)]="message" maxlength="100" rows="4" cols="50" placeholder="Type your message..."
+        (input)="updateRemainingChars()"></textarea>
 
-<p>{{ remainingChars }} characters remaining</p>
+    <p>{{ remainingChars }} characters remaining</p>
 </div>
 <div>
     <label for="stateSelect">Select a state:</label>
-<select id="stateSelect" [(ngModel)]="selectedState">
-  <option *ngFor="let state of states" [value]="state">{{ state }}</option>
-</select>
+    <select id="stateSelect" [(ngModel)]="selectedState">
+        <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+    </select>
 
-<p>You selected: {{ selectedState }}</p>
+    <p>You selected: {{ selectedState }}</p>
 </div>
 <div>
     <input type="number" [(ngModel)]="num1" (input)="calculate()" placeholder="Enter first number" />
-<select [(ngModel)]="operator" (change)="calculate()">
-  <option value="+">+</option>
-  <option value="-">-</option>
-  <option value="*">*</option>
-  <option value="/">/</option>
-</select>
-<input type="number" [(ngModel)]="num2" (input)="calculate()" placeholder="Enter second number" />
+    <select [(ngModel)]="operator" (change)="calculate()">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" [(ngModel)]="num2" (input)="calculate()" placeholder="Enter second number" />
 
-<p>Result: {{ result }}</p>
+    <p>Result: {{ result }}</p>
 </div>
-
-
+<div>
+    <input [type]="isPassword ? 'password' : 'text'" [(ngModel)]="userInput" placeholder="Enter password" />
+    <button (click)="toggleInputType()">
+        {{ isPassword ? 'Show' : 'Hide' }} Password
+    </button>
+</div>
+<div>
+    <h2>Counter: {{ count }}</h2>
+    <button (click)="increment()">Increment</button>
+    <button (click)="decrement()">Decrement</button>
+    <button (click)="reset()">Reset</button>
+</div>
+<div>
+    <button (click)="toggleTheme()">
+        Switch to {{ isDarkMode ? 'Light' : 'Dark' }} Mode
+      </button>
+</div>
