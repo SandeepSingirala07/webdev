@@ -18,12 +18,15 @@ export class AssignmentsComponent {
     this.showParagraph = !this.showParagraph;
   }
 
+  //2 Question
   message: string = '';
   remainingChars: number = 100;
 
   updateRemainingChars() {
     this.remainingChars = 100 - (this.message?.length || 0);
   }
+
+  //3 Questiom
   states: string[] = [
     'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado',
     'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii'
@@ -32,7 +35,7 @@ export class AssignmentsComponent {
 
   selectedState: string = '';
 
-
+  //4 Question
   num1: number = 0;
   num2: number = 0;
   operator: string = '+';
@@ -55,6 +58,7 @@ export class AssignmentsComponent {
     }
   }
 
+   //5 Question 
   userInput: string = '';
   isPassword: boolean = true;
 
@@ -62,6 +66,8 @@ export class AssignmentsComponent {
     this.isPassword = !this.isPassword;
   }
 
+
+  //8 Question 
   count: number = 0;
 
   increment() {
@@ -77,6 +83,7 @@ export class AssignmentsComponent {
   }
 
 
+  //7 Question
   isDarkMode = false;
 
   constructor(private renderer: Renderer2) {}

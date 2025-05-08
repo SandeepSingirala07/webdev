@@ -1,58 +1,67 @@
 <div>
-    <button (click)="toggleParagraph()">
-        {{ showParagraph ? 'Hide' : 'Show' }} Paragraph
-    </button>
-
-    <p *ngIf="showParagraph">
-        Beneath the canopy of an ancient forest, where sunlight filtered through a tangle of
-        emerald leaves, a gentle breeze stirred the moss-covered ground. Birds chirped in
-        scattered bursts, their songs echoing softly among the towering trunks. A narrow path,
-        barely visible beneath fallen leaves and twisted roots, wound its way deeper into the shadows,
-        inviting the curious to explore. Time seemed slower there, as if the forest held its breath,
-        guarding secrets older than memory. Even the air carried a hushed reverence, thick with the
-        scent of pine and earth, whispering stories only the trees could truly remember.
-    </p>
-</div>
-<div>
-    <textarea [(ngModel)]="message" maxlength="100" rows="4" cols="50" placeholder="Type your message..."
-        (input)="updateRemainingChars()"></textarea>
-
-    <p>{{ remainingChars }} characters remaining</p>
-</div>
-<div>
-    <label for="stateSelect">Select a state:</label>
-    <select id="stateSelect" [(ngModel)]="selectedState">
-        <option *ngFor="let state of states" [value]="state">{{ state }}</option>
-    </select>
-
-    <p>You selected: {{ selectedState }}</p>
-</div>
-<div>
-    <input type="number" [(ngModel)]="num1" (input)="calculate()" placeholder="Enter first number" />
-    <select [(ngModel)]="operator" (change)="calculate()">
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="*">*</option>
-        <option value="/">/</option>
-    </select>
-    <input type="number" [(ngModel)]="num2" (input)="calculate()" placeholder="Enter second number" />
-
-    <p>Result: {{ result }}</p>
-</div>
-<div>
-    <input [type]="isPassword ? 'password' : 'text'" [(ngModel)]="userInput" placeholder="Enter password" />
-    <button (click)="toggleInputType()">
-        {{ isPassword ? 'Show' : 'Hide' }} Password
-    </button>
-</div>
-<div>
-    <h2>Counter: {{ count }}</h2>
-    <button (click)="increment()">Increment</button>
-    <button (click)="decrement()">Decrement</button>
-    <button (click)="reset()">Reset</button>
-</div>
-<div>
-    <button (click)="toggleTheme()">
-        Switch to {{ isDarkMode ? 'Light' : 'Dark' }} Mode
-      </button>
+    <p>1. Have a paragraph & a toggle button, on click of the button control the visibility(Show/Hide) of the paragraph</p>
+    <div class="bottom-bordered">
+        <button (click)="toggleParagraph()">
+            {{ showParagraph ? 'Hide' : 'Show' }} Paragraph
+        </button>
+    
+        <p *ngIf="showParagraph">
+            Beneath the canopy of an ancient forest, where sunlight filtered through a tangle of
+            emerald leaves, a gentle breeze stirred the moss-covered ground. Birds chirped in
+            scattered bursts, their songs echoing softly among the towering trunks. A narrow path,
+            barely visible beneath fallen leaves and twisted roots, wound its way deeper into the shadows,
+            inviting the curious to explore. Time seemed slower there, as if the forest held its breath,
+            guarding secrets older than memory. Even the air carried a hushed reverence, thick with the
+            scent of pine and earth, whispering stories only the trees could truly remember.
+        </p>
+    </div>
+    <P>2. Create a text-area with maxLength=100, as the user keeps typing display updated Remaining characters.</P>
+    <div class="bottom-bordered">
+        <textarea [(ngModel)]="message" maxlength="100" rows="4" cols="50" placeholder="Type your message..."
+            (input)="updateRemainingChars()"></textarea>
+    
+        <p>{{ remainingChars }} characters remaining</p>
+    </div>
+    <P>3.Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a paragraph.</P>
+    <div class="bottom-bordered">
+        <label for="stateSelect">Select a state:</label>
+        <select id="stateSelect" [(ngModel)]="selectedState">
+            <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+        </select>
+    
+        <p>You selected: {{ selectedState }}</p>
+    </div>
+    <P>4. have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations</P>
+    <div class="bottom-bordered">
+        <input type="number" [(ngModel)]="num1" (input)="calculate()" placeholder="Enter first number" />
+        <select [(ngModel)]="operator" (change)="calculate()">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" [(ngModel)]="num2" (input)="calculate()" placeholder="Enter second number" />
+    
+        <p>Result: {{ result }}</p>
+    </div>
+    <P>5. create a input box, toggle the type of that input box to (text/password)</P>
+    <div class="bottom-bordered">
+        <input [type]="isPassword ? 'password' : 'text'" [(ngModel)]="userInput" placeholder="Enter password" />
+        <button (click)="toggleInputType()">
+            {{ isPassword ? 'Show' : 'Hide' }} Password
+        </button>
+    </div>
+    <P>6. create a counter example with 3 controls(increment,decrement,reset)</P>
+    <div class="bottom-bordered">
+        <h2>Counter: {{ count }}</h2>
+        <button (click)="increment()">Increment</button>
+        <button (click)="decrement()">Decrement</button>
+        <button (click)="reset()">Reset</button>
+    </div>
+    <P>7. Have a toggle button and control Dark/Light theme of a page.</P>
+    <div class="bottom-bordered">
+        <button (click)="toggleTheme()">
+            Switch to {{ isDarkMode ? 'Light' : 'Dark' }} Mode
+          </button>
+    </div>
 </div>
