@@ -1,0 +1,47 @@
+<body>
+    <h1> Simple calculation</h1>
+    <h2 onclick="calculation()">click me</h2>
+    <h3 id = "output"></h3>
+</body>
+<script>
+    function calculation() {
+        const a = prompt("Enter a number 1");
+        const b = prompt("Enter number 2");
+
+        const c = Number(a);
+        const d = Number(b);
+
+        if(isNaN(c) || isNaN(b)) {
+            document.getElementById("output").textContent = "NOt to number";
+        } else{
+              const total = c + d;
+              document.getElementById("output").textContent= `Total: ${total}`; 
+        }
+
+
+    }
+    let a = 10;
+
+    let b = 20;
+
+        console.log(`Given Element ${a} and ${b} = ${a + b}`);
+        console.log(`Addition of ${a} and ${b} is ${a + b}`);
+
+        console.log(typeof(a));
+
+        function  occurent(str) {
+            let count = {};
+
+            for ( let char in str) {
+                if(count[str]){
+                    count[str] = count[str] + 1;
+                } else {
+                }
+            }
+            for(let char in count){
+                console.log(`${char}  ${count[char]}`)
+            }
+        }
+
+        occurent("entertainment")
+</script>

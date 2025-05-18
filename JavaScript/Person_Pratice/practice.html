@@ -1,0 +1,40 @@
+revers String
+
+<script>
+
+function reverse(str){
+
+   return  str.split('').reverse().join('');
+
+}
+console.log(revers("Hello"));
+
+function reverseW(str) {
+    return str.split('').reverse().join();
+}
+console.log(reverseW("This is java class"));
+
+// 3. First Non-Repeated Character
+
+function repeatC(str) {
+    for(i in str) {
+        if(str.indexof(i) === str.lastindexof(i)) {
+            return str;
+        }
+    }
+    return null;
+}
+console.log(repeatC("entertainment"));
+
+// 4. Title Case a String
+function caseString(str) {
+    return str.split('').map(word => word.charAt(0).toUpperCase  + word.slice(1).join('') );
+}
+console.log("This is hell World");
+
+//'this is javascript class'
+function longest(str) {
+    str.longest()
+}
+</script>
+

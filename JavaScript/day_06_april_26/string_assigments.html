@@ -14,6 +14,7 @@ console.log(reverseWords('This is javascript class')); // Output: class javascri
 // 3. First Non-Repeated Character
 function firstNonRepeatedChar(str) {
   for (let char of str) {
+    
     if (str.indexOf(char) === str.lastIndexOf(char)) {
       return char;
     }
@@ -64,7 +65,7 @@ function removeSpecialChars(str) {
 console.log(removeSpecialChars('hello@#hi&')); // Output: hellohi
 
 // 10. Move Special Characters to End
-function moveSpecialCharsToEnd(str) {
+function moveSpecialCharsToEnd(str) { ////
   let letters = '';
   let specials = '';
   for (let char of str) {

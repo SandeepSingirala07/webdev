@@ -1,4 +1,4 @@
-/*1. Print the occurence of each character in a string
+/*1. Print the occurrence of each character in a string
    input: 'entertainment'
    output: { e:3 , n:2 , t: 3 ....} */
    console.log("Problem 1");
@@ -19,7 +19,10 @@
       }
       characterCount('entertainment');
 
-      console.log("------------------------")
+
+      
+console.log("------------------------")
+      
 /*2. Print the character which is repeated max no of times
    input: 'hello world'
    output : 'L' */
@@ -30,35 +33,47 @@
     let maxChar = '';
     let maxCount = 0;
   
-    str = str.replace(/\s+/g, '');
-    str.toLowerCase(); // Remove spaces and ignore case
-  
     for (let char of str) {
-      count[char] = (count[char] || 0) + 1;
+      if (count[char]) {
+        count[char] = count[char] + 1; // Increase the count by 1
+    } else {
+        count[char] = 1; // First time we see this character
+    }
       if (count[char] > maxCount) {
         maxChar = char;
         maxCount = count[char];
       }
     }
   
-    console.log(maxChar.toUpperCase());
+    console.log("Character counts:", count);
+    console.log("Most frequent character:", maxChar);
+    console.log("Frequency:", maxCount);
   }
   maxRepeatedCharacter('hello');
 
   console.log("------------------------")
 
-  /*3. Swap The case for Each Character in a string 
+
+/*3. Swap The case for Each Character in a string 
    input: 'Hello World'
    output: 'hELLO wORLD' */
    console.log("Problem 3");
+function swapCase(str) {
+  let result = '';
+  for (let char of str) {
+    if (char === char.toUpperCase()) {
+      result += char.toLowerCase();
+    } else {
+      result += char.toUpperCase();
+    }
+  }
+  console.log(result);
+}
+swapCase("Hello World");
 
-   function swapCase(str){
-      str.s
-      console.log(str);
-   }
-   swapCase("Hello World");
 
-   console.log("------------------------")
+
+console.log("------------------------")
    /*4. Print the Abbreviation for a string
    input: 'Rabindra Nath Tagore'
    output: 'R. N. tagore' */
@@ -107,7 +122,7 @@
   shiftCharacters("abcxyz");
 
   console.log("------------------------")
-  /*6. Ask user to enter a sequence of parantheses and validate 
+  /*6. Ask user to enter a sequence of parentheses and validate 
    input: '([{ }])'
    output : true*/
   console.log("Problem 6");
@@ -203,3 +218,6 @@ console.log("Problem 9");
     console.log(num);
   }
   romanToInt("IX");
+
+
+  ///// PRogram 2 count[char] = (count[char] || 0) + 1;
