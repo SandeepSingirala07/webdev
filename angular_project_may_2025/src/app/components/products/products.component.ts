@@ -3,12 +3,14 @@ import productData from './products_data'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { ZoominDirective } from '../../directives/zoomin.directive';
 
 @Component({
   selector: 'app-products',
   imports: [
     NgxPaginationModule,
-    FontAwesomeModule
+    FontAwesomeModule, 
+    ZoominDirective
   ],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
