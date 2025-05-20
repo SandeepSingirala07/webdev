@@ -102,5 +102,47 @@
     </tbody>
   </table>
 
+  <div class="border p-2 m-2">
+  <div>Lets understand ngStyle</div>
+  <input type="number" [(ngModel)]="num" />
+  <p [style.color]="num % 2 == 0 ? 'blue' : 'red'"> Add Color dynamically</p>
+  <p [style.fontSize.px]='num % 2 == 0 ? 48 : 24'> Add style with unit </p>
+  <p [style.background-color]="num % 2 == 0 ?'green':'blue' "> Add style conditionally </p>
+  <p [ngStyle]="num % 2 == 0 ? myStyle1 : myStyle2"> NgStyle for multiple values </p>
+  <p [ngStyle]="myFunction()"> NgStyle for multiple values </p>
+</div>
+
+<div class="border p-2 m-2">
+  <div>Lets understand ngClass</div>
+  <input type="number" [(ngModel)]="num" />
+  <button [ngClass]="['btn', num%2==0 ? 'btn-success':'btn-danger']">Test Button</button>
+</div>
+
+
+<div class="border p-2 m-2">
+  <div>Lets understand ng-template</div>
+  <div *ngIf="num%2==0; else oddBlock">
+    {{num}} is Even
+  </div>
+  <ng-template #oddBlock>
+    {{num}} is odd
+  </ng-template>
+</div>
+
+<div class="border p-2 m-2">
+  <div>Lets understand ng-container</div>
+  <ng-container *ngfor="">
+    <div *ngIf="num%2==0">
+      {{num}} is Even
+    </div>
+  </ng-container>
+</div>
+
+<div class="border p-2 m-2">
+  <div>Lets understand NUmber Only Custom Directive</div>
+  <input appNumberonly placeholder="enter number & text to see the diff" />  
+
+  <h3 appHighlight>This element hosts appHighlight directive</h3>
+
   <h3 appHighlight>This Highlight Directive</h3>
 </div>

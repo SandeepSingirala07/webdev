@@ -1,12 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NumberonlyDirective } from '../../directives/numberonly.directive';
+import { HighlightDirective } from '../../directives/highlight.directive';
 
 @Component({
   selector: 'app-directives',
   imports: [
         FormsModule,
-        CommonModule
+        CommonModule,
+        NumberonlyDirective,
+        HighlightDirective
   ],
   templateUrl: './directives.component.html',
   styleUrl: './directives.component.css'
@@ -27,4 +31,20 @@ export class DirectivesComponent {
     { "eId": 105, "name": "deepak", "sal": 8000, "gender": "male" }
   ];
 
+   myStyle1 = {
+    "color": 'red',
+    "border": "5px dotted green",
+  }
+  myStyle2 = {
+    "color": 'black',
+    "border": "5px dotted red",
+  }
+
+  myFunction() {
+    if (this.num % 2 == 0) {
+      return this.myStyle1;
+    } else {
+      return this.myStyle2;
+    }
+  }
 }
