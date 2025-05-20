@@ -1,0 +1,85 @@
+<h3 class="text-center">Employee List</h3>
+<hr />
+<div class="container">
+  <div style="display: flex;">
+      <div class="col-auto">
+      <input
+        type="text"
+        [(ngModel)]="searchText"
+        (ngModelChange)="onSearchChange()"
+        placeholder="Search by ID..."
+      />
+    </div>
+  <div class="row" style="padding-left:15px ;">
+    <button type="button" class="btn btn-primary" (click)="toggleContent()">
+      {{ isVisible ? "Employee Table" : "Employee Card " }}
+    </button>
+  </div>
+  </div>
+  <div class="row mt-2">
+    @if (isVisible) {
+    <div style="display: flex; padding-right: 10px">
+      <table class="table table-bordered table-striped table-hover text-center">
+        <thead class="table-dark">
+          <tr>
+            <th>Category</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- @for (employee of employeeArr; track employee.id ) { -->
+           @for (employee of filteredEmployees; track employee.id) {
+          <tr>
+            <td>{{ employee.category }}</td>
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.title }}</td>
+            <td class="text-truncate" style="max-width: 250px">
+              {{ employee.description }}
+            </td>
+            <td>{{ employee.price }}</td>
+            <td>{{ employee.rating?.rate }}</td>
+            <td><a href="#" class="btn btn-primary">Details</a></td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    } @else {
+    <div style="display: flex; padding-right: 10px">
+      <!-- @for (employee of employeeArr | paginate: { itemsPerPage: 4, currentPage: e};track $index) { -->
+       @for (employee of filteredEmployees | paginate: { itemsPerPage: 4, currentPage: e }; track $index) {
+      <div class="col-sm-3">
+        <div class="card text-center">
+          <img
+            src="{{ employee.image }}"
+            class="card-img-top"
+            alt="..."
+            height="200px"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ employee.category }}</h5>
+            <p class="card-text">{{ employee.id }}</p>
+            <p class="card-text">{{ employee.title }}</p>
+            <p class="card-text text-truncate">{{ employee.description }}</p>
+            <p class="card-text">{{ employee.price }}</p>
+            <p class="card-text">{{ employee.rating.rate }}</p>
+            <a href="#" class="btn btn-primary">Details</a>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    }
+  </div>
+  <div class="row">
+    <div class="col-sm-4 offset-4 mt-2">
+      <pagination-controls (pageChange)="e = $event"></pagination-controls>
+    </div>
+  </div>
+</div>
+

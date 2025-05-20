@@ -21,7 +21,9 @@
             <p class="card-text">{{product.title}}</p>
             <p class="card-text text-truncate">{{product.description}}</p>
             <p class="card-text">{{product.price}}</p>
-            <p class="card-text">{{product.rating.rate}}</p>
+            <p class="card-text">{{product.rating.rate}}
+               <fa-icon [icon]="faStar"></fa-icon>
+            </p>
             <a href="#" class="btn btn-primary">Details</a>
           </div>
         </div>
