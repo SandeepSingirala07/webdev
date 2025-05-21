@@ -6,6 +6,7 @@ import { ProductsComponent } from '../products/products.component';
 import { Assignments2Component } from '../assignments2/assignments2.component';
 import { MyModalComponent } from '../my-modal/my-modal.component';
 import { Demo1Component } from '../demo1/demo1.component';
+import { EmployeeCRUDComponent } from '../employee-crud/employee-crud.component';
 
 @Component({
   selector: 'app-body',
@@ -16,7 +17,8 @@ import { Demo1Component } from '../demo1/demo1.component';
     ProductsComponent,
      //Assignments2Component,
      //MyModalComponent,
-    //  Demo1Component
+    //  Demo1Component,
+    EmployeeCRUDComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

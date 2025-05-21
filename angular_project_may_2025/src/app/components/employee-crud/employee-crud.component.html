@@ -1,0 +1,110 @@
+<p>employee-crud works!</p>
+
+<div class="border p-2 m-2">
+  <div>
+    <button  type="button" class="btn btn-primary">
+        Add <fa-icon [icon]="faPlus" style="cursor:pointer;" (click)="showModal = true"></fa-icon>
+    </button>  
+  </div><h4>Employees Table</h4>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Position</th>
+        <th>Salary</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (emp of employees; track emp.id) {
+        <tr>
+          <!-- <td>{{$index+1}}</td> -->
+          <td>{{emp.id}}</td>
+          <td>{{emp.name}}</td>
+          <td>{{emp.department}} </td>
+          <td>{{emp.position}}</td>
+          <td>{{emp.salary}}</td>
+          <td>{{emp.email}}</td>
+          <td>Delete <fa-icon [icon]="faTrash" class="text-danger" (click)="deleteItem(emp.id)"></fa-icon></td>
+          <td>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+  View</button>
+        </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+<!-- Modal -->
+<div class="modal" tabindex="-1" [ngClass]="{ 'show d-block': showModal }" *ngIf="showModal">
+  <div class="modal-dialog">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title">Enter Employee Details</h5>
+        <button type="button" class="btn-close" (click)="showModal = false"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="mb-2">
+            <label>Id</label>
+            <input type="number" class="form-control" [(ngModel)]="formData.id" name="id">
+          </div>
+          <div class="mb-2">
+            <label>Name</label>
+            <input type="text" class="form-control" [(ngModel)]="formData.name" name="name">
+          </div>
+          <div class="mb-2">
+            <label>Department</label>
+            <input type="text" class="form-control" [(ngModel)]="formData.department" name="department">
+          </div>
+            <div class="mb-2">
+            <label>Position</label>
+            <input type="txt" class="form-control" [(ngModel)]="formData.position" name="position">
+          </div>
+          <div class="mb-2">
+            <label>Salary</label>
+            <input type="number" class="form-control" [(ngModel)]="formData.salary" name="salary">
+          </div>
+            <div class="mb-2">
+            <label>Email</label>
+            <input type="email" class="form-control" [(ngModel)]="formData.email" name="email">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="showModal = false">Cancel</button>
+        <button class="btn btn-primary" (click)="saveData()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle">Company Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        This company is a well-rounded organization with a strong team across key departments like
+         Engineering, Marketing, HR, and Finance. It values expertise, collaboration, and strategic 
+         growth, as seen in the diverse roles from Software Engineer to Financial Analyst. 
+         The employee structure reflects a balanced focus on innovation, people, and performance.
+      </div>
+
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
