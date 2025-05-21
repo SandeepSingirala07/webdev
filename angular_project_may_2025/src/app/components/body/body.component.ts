@@ -7,18 +7,20 @@ import { Assignments2Component } from '../assignments2/assignments2.component';
 import { MyModalComponent } from '../my-modal/my-modal.component';
 import { Demo1Component } from '../demo1/demo1.component';
 import { EmployeeCRUDComponent } from '../employee-crud/employee-crud.component';
+import { PipesComponent } from '../pipes/pipes.component';
 
 @Component({
   selector: 'app-body',
   imports: [
     // DatabindingComponent,
     // AssignmentsComponent,
-    DirectivesComponent,
-    ProductsComponent,
+    //DirectivesComponent,
+    //ProductsComponent,
      //Assignments2Component,
      //MyModalComponent,
     //  Demo1Component,
-    EmployeeCRUDComponent
+    EmployeeCRUDComponent,
+    PipesComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
