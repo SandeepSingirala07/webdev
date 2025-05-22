@@ -1,12 +1,9 @@
-<div class="mb-3 border border-10 p-2 m-2 rounded-2" style="box-shadow: 0 0 0 2px black;">
-    <p style="color: chocolate; font-weight: 500; text-align: center; font-size: large;">Assignments3</p>
-  <div class="mb-3 border border-5 p-2 m-2 rounded-2">
-    <div>
-      <p>
-        // 1. Create a custom pipe(ordinal) which takes a number as input and
-        returns in ordinal format input : [21,22,23,24] output : 21st, 22nd ,
-        23rd, 24th
-      </p>
+<div class="border border-5 p-2 m-2 rounded-2">
+    <p style="text-align: center; font-weight: 1000px; color:chocolate; font-size: 16px;"> Assignment 3</p>
+  <div class="border border-5 p-2 m-2 rounded-2">
+        <p>// 1. Create a custom pipe(ordinal) which takes a number as input and returns in ordinal format
+//    input : 21,22,23,24  output : 21st, 22nd , 23rd, 24th</p>
+    <div class="mb-3">
       <input
         type="number"
         [(ngModel)]="number"
@@ -15,18 +12,16 @@
       />
       <button class="btn btn-primary mt-2" (click)="add()">Add</button>
     </div>
-
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let num of numbers">
         {{ num | ordinal }}
       </li>
     </ul>
   </div>
-  <div class="mb-3 border border-5 p-2 m-2 rounded-2">
-    <P>
-      2. create a custom pipe(Roman) which takes a number as input and returns
-      its equivalent roman value input : 4 8 9 output : IV VIII IX
-    </P>
+  <div class="border border-5 p-2 m-2 rounded-2">
+    <p>// 2. create a custom pipe(Roman) which takes a number as input and returns its equivalent roman value
+//    input :  4    8     9   
+//    output : IV  VIII   IX </p>
     <div class="mb-3">
       <input
         type="number"
@@ -43,10 +38,10 @@
       </li>
     </ul>
   </div>
-  <div class="mb-3 border border-5 p-2 m-2 rounded-2">
-    <P>// 3. create a custom pipe called 'age' which takes a date as input and returns the age in years.
+  <div class="border border-5 p-2 m-2 rounded-2">
+    <p>// 3. create a custom pipe called 'age' which takes a date as input and returns the age in years.
 //    input : 04-06-2020
-//    output : 5 years old</P>
+//    output : 5 years old</p>
     <div class="mb-3">
       <input type="date" [(ngModel)]="birthdateInput" class="form-control" />
       <button class="btn btn-success mt-2" (click)="addBirthdate()">
@@ -60,41 +55,41 @@
       </li>
     </ul>
   </div>
-  <div class="mb-3 border border-5 p-2 m-2 rounded-2">
+  <div class="border border-5 p-2 m-2 rounded-2">
     <p>
-        4. declare an array of employee objects. display them in a table.
-            create a custom pipe 'Salutation' that will add 'mr. / miss.' before the employee name.<br>
-        5. declare an array of employee objects. display them in a table. 
-            add a search-box above the table. create a custom-pipe to filter/search employees data. 
+        // 4. declare an array of employee objects. display them in a table.
+//    create a custom pipe 'Salutation' that will add 'mr. / miss.' before the employee name.<br>
+// 5. declare an array of employee objects. display them in a table. 
+//    add a search-box above the table. create a custom-pipe to filter/search employees data.
     </p>
     <div class="container mt-4">
-  <input
-    type="text"
-    [(ngModel)]="searchText"
-    placeholder="Search employees..."
-    class="form-control mb-3"
-  />
+      <input
+        type="text"
+        [(ngModel)]="searchText"
+        placeholder="Search employees..."
+        class="form-control mb-3"
+      />
 
-  <table class="table table-bordered">
-    <thead class="table-dark">
-      <tr>
-        <th>ID</th>
-        <th>Name (with Salutation)</th>
-        <th>Gender</th>
-        <th>Department</th>
-        <th>Position</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let emp of employees | employeeFilter: searchText">
-        <td>{{ emp.id }}</td>
-        <td>{{ emp.name | salutation: emp.gender }}</td>
-        <td>{{ emp.gender }}</td>
-        <td>{{ emp.department }}</td>
-        <td>{{ emp.position }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+      <table class="table table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Name (with Salutation)</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th>Position</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of employees | employeeFilter : searchText">
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.name | salutation : emp.gender }}</td>
+            <td>{{ emp.gender }}</td>
+            <td>{{ emp.department }}</td>
+            <td>{{ emp.position }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
