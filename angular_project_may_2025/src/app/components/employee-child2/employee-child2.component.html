@@ -1,0 +1,45 @@
+
+<!-- Modal -->
+<div class="modal" tabindex="-1" [ngClass]="{ 'show d-block': showModal }" *ngIf="showModal">
+  <div class="modal-dialog">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title">Enter Employee Details</h5>
+        <button type="button" class="btn-close" (click)="showModal = false"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="mb-2">
+            <label>Id</label>
+            <input type="number" class="form-control" [(ngModel)]="formData.id" name="id">
+          </div>
+          <div class="mb-2">
+            <label>Name</label>
+            <input type="text" class="form-control" [(ngModel)]="formData.name" name="name">
+          </div>
+          <div class="mb-2">
+            <label>Department</label>
+            <input type="text" class="form-control" [(ngModel)]="formData.department" name="department">
+          </div>
+            <div class="mb-2">
+            <label>Position</label>
+            <input type="txt" class="form-control" [(ngModel)]="formData.position" name="position">
+          </div>
+          <div class="mb-2">
+            <label>Salary</label>
+            <input type="number" class="form-control" [(ngModel)]="formData.salary" name="salary">
+          </div>
+            <div class="mb-2">
+            <label>Email</label>
+            <input type="email" class="form-control" [(ngModel)]="formData.email" name="email">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="showModal = false">Cancel</button>
+        <button class="btn btn-primary" (click)="saveData()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+

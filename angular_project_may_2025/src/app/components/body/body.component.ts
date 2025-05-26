@@ -9,6 +9,7 @@ import { Demo1Component } from '../demo1/demo1.component';
 import { EmployeeCRUDComponent } from '../employee-crud/employee-crud.component';
 import { PipesComponent } from '../pipes/pipes.component';
 import { Pipes2Component } from '../pipes2/pipes2.component';
+import { EmployeeParentComponent } from '../employee-parent/employee-parent.component';
 
 @Component({
   selector: 'app-body',
@@ -19,10 +20,11 @@ import { Pipes2Component } from '../pipes2/pipes2.component';
     //ProductsComponent,
      //Assignments2Component,
      //MyModalComponent,
-    //  Demo1Component,
-    EmployeeCRUDComponent,
-    PipesComponent,
-    Pipes2Component
+    // Demo1Component,
+    //EmployeeCRUDComponent,
+    //PipesComponent,
+    //Pipes2Component,
+      EmployeeParentComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

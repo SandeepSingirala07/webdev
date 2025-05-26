@@ -1,0 +1,11 @@
+<!-- <button  type="button" class="btn btn-primary" (click)="openFormModal()">Add Employee</button> -->
+ <button class="btn btn-success" (click)="openFormModal()">Add Employee</button>
+
+<!-- Pass input to child to open modal -->
+<app-employee-child2 [triggerOpenModal]="openModalFlag" (addressEvent)="receiveFormDataChild2($event)"></app-employee-child2>
+<app-employee-child1 [employeeList]="employees" (addressEvent)="receiveDataFromChild1($event)"></app-employee-child1>
+
+
+
+
+
