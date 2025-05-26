@@ -10,6 +10,8 @@ import { EmployeeCRUDComponent } from '../employee-crud/employee-crud.component'
 import { PipesComponent } from '../pipes/pipes.component';
 import { Pipes2Component } from '../pipes2/pipes2.component';
 import { EmployeeParentComponent } from '../employee-parent/employee-parent.component';
+import { Math1Component } from '../math1/math1.component';
+import { Math2Component } from '../math2/math2.component';
 
 @Component({
   selector: 'app-body',
@@ -18,17 +20,22 @@ import { EmployeeParentComponent } from '../employee-parent/employee-parent.comp
     // AssignmentsComponent,
     //DirectivesComponent,
     //ProductsComponent,
-     //Assignments2Component,
-     //MyModalComponent,
+    //Assignments2Component,
+    //MyModalComponent,
     // Demo1Component,
+    // Demo2Component,
     //EmployeeCRUDComponent,
     //PipesComponent,
     //Pipes2Component,
-      EmployeeParentComponent
+    //EmployeeParentComponent,
+    // TrafficLightComponent,
+    // ParentComponent
+    Math1Component,
+    Math2Component,
   ],
   templateUrl: './body.component.html',
-  styleUrl: './body.component.css'
+  styleUrl: './body.component.css',
 })
 export class BodyComponent {
-
+  flag:boolean = true;
 }
