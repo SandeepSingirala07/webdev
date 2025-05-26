@@ -1,0 +1,28 @@
+<script>
+  let res1 = Math.max(10, 20, 30, 40, 50); // max() returns a value
+  console.log(res1);
+
+  user_url = 'https://jsonplaceholder.typicode.com/users';
+  let userPromise = fetch(user_url);
+
+  // To get Data From Promise , we have 1. then() 2. async-await
+
+  // 1. then()
+  userPromise.then(
+    (response)=>{
+      console.log(response);
+      let jsonPromise = response.json();
+      jsonPromise.then(
+        (finalResponse)=>{
+          console.log(finalResponse)
+        },
+        (finalError)=>{
+          console.log(finalError)
+        },
+      )
+    },
+    (error)=>{
+      console.log(error)
+    }
+  )
+</script>
