@@ -12,6 +12,7 @@ import { Pipes2Component } from '../pipes2/pipes2.component';
 import { EmployeeParentComponent } from '../employee-parent/employee-parent.component';
 import { Math1Component } from '../math1/math1.component';
 import { Math2Component } from '../math2/math2.component';
+import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
 
 @Component({
   selector: 'app-body',
@@ -30,8 +31,9 @@ import { Math2Component } from '../math2/math2.component';
     //EmployeeParentComponent,
     // TrafficLightComponent,
     // ParentComponent
-    Math1Component,
-    Math2Component,
+    // Math1Component,
+    // Math2Component,
+    HttpDemo1Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
