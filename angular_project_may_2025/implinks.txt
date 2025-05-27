@@ -1,0 +1,13 @@
+UI recordings:
+https://drive.google.com/drive/folders/1nvrZO77hjPJNPNHmHlWtqbWz-W6alkc5?usp=drive_link 
+
+
++++++++============== Assignment===========================
+
+1. Create 1 user CRUD application using HttpClient
+	a. fetch the data and display in a table (json-server)
+	b. create a form, collect form data and make a post call to add a new user
+	c. add 'delete' button against every user, on click 'delete', delete that user
+	d. display 'Loading...' text/Image when data is being fetched
+	e. implement update functionality to update the data
+	f. write all the logics in a service for code reusability

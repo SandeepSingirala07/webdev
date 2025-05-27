@@ -1,0 +1,67 @@
+<!-- <p>curd works!</p>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Employee_name</th>
+      <th>Employee_salary</th>
+      <th>Employee_age</th> -->
+      <!-- <th>Profile_image</th> -->
+    <!-- </tr>
+  </thead>
+  <tbody>
+    @for (emp of this.employeeData; track emp.id) {
+    <tr>
+      <td>{{ emp.id }}</td>
+      <td>{{ emp.employee_name }}</td>
+      <td>{{ emp.employee_salary }}</td>
+      <td>{{ emp.employee_age }}</td> -->
+      <!-- <td>{{ emp.profile_image }}</td> -->
+    <!-- </tr>
+    }
+  </tbody>
+</table> -->
+
+
+
+
+<div *ngIf="userService.isLoading">Loading...</div>
+
+<form (ngSubmit)="addUser()">
+  <input [(ngModel)]="formUser.name" name="name" required placeholder="Name" />
+  <input [(ngModel)]="formUser.salary" name="salary" required placeholder="Salary" />
+  <input [(ngModel)]="formUser.age" name="age" required placeholder="Age" />
+  <button class="btn btn-primary" type="submit">Add</button>
+</form>
+
+<table *ngIf="!userService.isLoading" class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Age</th>
+      <th>Delete</th>
+      <th>Update</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (user of userService.users; track user.id) {
+        <tr>
+    <!-- <tr *ngFor="let user of userService.users"> -->
+      <td>{{ user.id }}</td>
+      <td>{{ user.employee_name }}</td>
+      <td>{{ user.employee_salary }}</td>
+      <td>{{ user.employee_age }}</td>
+      <td>
+        <button  class="btn btn-secondary"  (click)="deleteUser(user.id)">Delete</button>
+      </td>
+      <td>
+            <button class="btn btn-primary" (click)="updateUser(user)">Update</button>
+      </td>
+    </tr>
+}
+  </tbody>
+</table>
+
