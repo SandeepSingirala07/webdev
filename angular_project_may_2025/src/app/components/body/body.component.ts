@@ -14,6 +14,7 @@ import { Math1Component } from '../math1/math1.component';
 import { Math2Component } from '../math2/math2.component';
 import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
 import { CurdComponent } from '../curd/curd.component';
+import { HttpDemo2Component } from '../http-demo2/http-demo2.component';
 
 @Component({
   selector: 'app-body',
@@ -35,7 +36,8 @@ import { CurdComponent } from '../curd/curd.component';
     // Math1Component,
     // Math2Component,
     //HttpDemo1Component,
-    CurdComponent
+    // CurdComponent,
+    HttpDemo2Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',

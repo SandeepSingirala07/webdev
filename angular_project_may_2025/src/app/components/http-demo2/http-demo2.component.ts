@@ -4,12 +4,12 @@ import { EmployeeService } from '../../services/employee.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-demo2',
+  selector: 'app-http-demo2',
   imports: [],
-  templateUrl: './demo2.component.html',
-  styleUrl: './demo2.component.css'
+  templateUrl: './http-demo2.component.html',
+  styleUrl: './http-demo2.component.css'
 })
-export class Demo2Component {
+export class HttpDemo2Component {
     employees: Employee[] = [];
   constructor(private employeeService: EmployeeService, private httpClient: HttpClient) {
   }
