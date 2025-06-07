@@ -1,0 +1,52 @@
+<!-- <div class="container mt-4">
+  <h2 class="mb-3">Employee List</h2>
+
+  <table class="table table-bordered table-striped table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Employee ID</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Gender</th>
+        <th>Actions</th>
+      </tr>
+      <tr>
+        <td>
+          <input type="number" class="form-control" [(ngModel)]="newEId" />
+        </td>
+        <td>
+          <input type="text" class="form-control" [(ngModel)]="newName" />
+        </td>
+        <td>
+          <input type="number" class="form-control" [(ngModel)]="newSal" />
+        </td>
+        <td>
+          <select class="form-select" [(ngModel)]="newGender">
+            <option value="" disabled selected>Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </td>
+        <td>
+          <button class="btn btn-success btn-sm me-2" (click)="addEmployee()">Add</button>
+          <button class="btn btn-danger btn-sm" (click)="clearAll()">Clear All</button>
+        </td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr ngFor="let emp of employees">
+        <td>{{ emp.eId }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.sal }}</td>
+        <td>{{ emp.gender }}</td>
+        <td>
+          <button class="btn btn-outline-danger btn-sm" (click)="deleteEmployee(emp.eId)">Delete</button>
+        </td>
+      </tr>
+      <tr ngIf="employees.length === 0">
+        <td colspan="5" class="text-center text-muted">No employees found.</td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->

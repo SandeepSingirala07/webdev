@@ -1,0 +1,77 @@
+<p>angular-demo works!</p>
+<h3> Numbers</h3>
+
+<input type=" number" [(ngModel)]="num">
+
+@if(num%2==0) {
+    <div>{{num}} even</div>
+} @else  {
+    <div>{{num}} odd</div>
+}
+
+<div> Switch</div>
+<input type ="number" [(ngModel)]="dayNum">
+
+@switch (dayNum) {
+    @case(1) {<h1>Monday</h1>}
+    @case(2) {<h1>Tue</h1>}
+    @case(3) {<h1>W</h1>}
+    @case(4) {<h1>Thur</h1>}
+    @case(5) {<h1>Fri</h1>}
+    @case(6) {<h1>Sat</h1>}
+    @case(7) {<h1>Sun</h1>}
+    @default { <h1>invalid</h1>}
+}
+<select [(ngModel)]="selected">
+    @for (item of stateNames; track $index) {
+    <!-- <h3>{{item}}</h3> -->
+    <option>{{item}}</option>
+}
+</select>
+<div> Selected Country {{selected}}</div>
+///data list useful for search
+<input list="stateNames">
+<datalist id="stateNames">
+    @for (item of stateNames; track $index) {
+    <!-- <h3>{{item}}</h3> -->
+    <option>{{item}}</option>
+}
+</datalist>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>SL no</th>
+            <th>Eid</th>
+            <th>Name</th>
+            <th>sal</th>
+            <th>gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(items of employees; track $index) {
+            <tr>
+                <td>{{$index}}</td>
+                <td>{{items.eId}}</td>
+                <td>{{items.name}}</td>
+                <td>{{items.sal}}</td>
+                <td>{{items.gender}}</td>
+            </tr>
+        }
+        <tr>     
+        </tr>
+    </tbody>
+</table>
+
+
+<button class="btn btn-primary" (click)="flag=!flag">Table/Card</button>
+
+@if(flag) {
+    <h1>Table</h1>
+} @else {
+    <h1>Card</h1>
+}
+
+@for(item of productsArr; track $index) {}
+
+<p [style.color]="num%2==0 ? 'red' : 'blue'">Hello</p>

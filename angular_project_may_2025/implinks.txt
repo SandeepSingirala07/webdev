@@ -11,3 +11,38 @@ https://drive.google.com/drive/folders/1nvrZO77hjPJNPNHmHlWtqbWz-W6alkc5?usp=dri
 	d. display 'Loading...' text/Image when data is being fetched
 	e. implement update functionality to update the data
 	f. write all the logics in a service for code reusability
+
+
+	-------------------------------
+	code .
+	ng g c components/componentName
+	ng s -o
+	ng g s services/serviceName
+
+	loadash, moment.js for handling date and time
+
+	Html + Typescript
+	two way data-binding
+	Regular Dom
+	HttpClientModule -- to interact with database
+	Dependency Injection - 
+	Form Validation
+	No additional libraries
+	Functionality Heavy
+	Large application
+
+	Folder structure:
+	.angular ---- Cache folders
+	.vscode ----- vs code settings
+	node modules ----- 300MB mostly my node modules - libraries - npm i 
+	It get what to install from package.json file
+	package.json ----- project dependencies - rxjs, 
+	public - asserts -- like icons, Images
+	Src - heart of application
+	GitIgnore: ignore node modules, .vscode, angular.json, package.json, etc
+
+
+	--------------------------
+	I -130 visa
+	485 -- Adjustement status form  2-3 year
+	next green card  - 2 yars visa

@@ -16,6 +16,11 @@ import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
 import { CurdComponent } from '../curd/curd.component';
 import { HttpDemo2Component } from '../http-demo2/http-demo2.component';
 import { ObservableDemo1Component } from '../observable-demo1/observable-demo1.component';
+import { ObservableDemo2Component } from '../observable-demo2/observable-demo2.component';
+import { FormDemo1Component } from '../form-demo1/form-demo1.component';
+import { FormDemo2Component } from '../form-demo2/form-demo2.component';
+import { AngularDemoComponent } from '../angular-demo/angular-demo.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-body',
@@ -39,7 +44,12 @@ import { ObservableDemo1Component } from '../observable-demo1/observable-demo1.c
     //HttpDemo1Component,
     // CurdComponent,
     //HttpDemo2Component,
-    ObservableDemo1Component
+    //ObservableDemo1Component,
+    //ObservableDemo2Component
+    //FormDemo1Component,
+    //FormDemo2Component,
+    //AngularDemoComponent,
+    RouterOutlet
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',

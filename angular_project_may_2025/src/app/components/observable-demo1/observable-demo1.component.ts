@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { filter, from, interval, map, Observable, range, take } from 'rxjs';
 
@@ -12,17 +13,17 @@ import { filter, from, interval, map, Observable, range, take } from 'rxjs';
 })
 export class ObservableDemo1Component {
 
-  // this.time$ = new Observable<string>(observer => {
-  //   setInterval(()=> observer.next(new Date().toLocaleDateString()), 1000)
-  // });
+  time$ = new Observable<string>(observer => {
+    setInterval(() => observer.next(new Date().toLocaleTimeString()), 1000);
+  });
 
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
 
   ngOnInit() {
-    this.create_observable();
-    this.from_demo();
+   // this.create_observable();
+    //this.from_demo();
     this.interval_demo();
-    this.range_demo();
+    //this.range_demo();
   }
 
   create_observable() {  // publisher - subscriber
@@ -70,7 +71,7 @@ export class ObservableDemo1Component {
   interval_demo() {
     this.numPublisher = interval(1000);
 
-    //this.numPublisher.subscribe((val: any) => console.log(val));
+    this.numPublisher.subscribe((val: any) => console.log(val, "Interval"));
   }
 
 

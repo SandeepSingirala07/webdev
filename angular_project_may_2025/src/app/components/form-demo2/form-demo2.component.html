@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 offset-4 border-5 rounded-2 p-3">
+      <p class="text-center">Template Driven Form</p>
+      <form #userForm="ngForm" (submit)="submitUserForm(userForm)">
+        <p>
+          Name:<input
+            class="form-control"
+            name="name"
+            [(ngModel)]="user.name"
+            #name=ngModel
+            required
+            minlength="5"
+          />
+          <span class="text-danger" *ngIf="name.hasError('required')">Name is Required</span>
+          <span class="text-danger"*ngIf="name.hasError('minlength')">Name should have min 5 character:</span>
+        </p>
+        <P>
+          Email:<input
+            class="form-control"
+            name="email"
+            [(ngModel)]="user.email"
+            #email=ngModel
+            required
+          />
+        </P>
+        <P>
+          Gender
+          <input
+            type="radio"
+            name="gender"
+            id="male"
+            value="male"
+            #gender=ngModel
+            [(ngModel)]="user.gender"
+          />Male
+          <input
+            type="radio"
+            name="gender"
+            id="female"
+            value="female"
+            #gender=ngModel
+            [(ngModel)]="user.gender"
+          />Female
+        </P>
+        <div ngModelGroup="'address">
+          <P
+            >Street:<input
+              class="form-control"
+              name="street"
+              ngModel
+              [(ngModel)]="user.address.street"
+          /></P>
+          <P
+            >City:<input
+              class="form-control"
+              name="city"
+              ngModel
+              [(ngModel)]="user.address.city"
+          /></P>
+          <P
+            >Zipcode :<input
+              class="form-control"
+              name="zipcode"
+              ngModel
+              [(ngModel)]="user.address.zipcode"
+          /></P>
+        </div>
+        <div>
+          <input type="reset" value="Reset" class="btn btn-danger mx-2" />
+          <input
+            type="submit"
+            value="Submit"
+            class="btn btn-success"
+            [disabled]="userForm.invalid"
+          />
+        </div>
+      </form>
+
+      <div>
+        <pre>
+        <label>Json Data :{{ userForm.value | json }}
+        </label>
+        </pre>
+        <pre>
+        <label>Object Data  :{{ user | json }}
+        </label>
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>

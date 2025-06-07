@@ -50,6 +50,7 @@
     <div>PSlice Pipe</div>
 
     <div>{{nunArry}}</div>
+    <P>{{nunArry}}</P>
     <div>{{nunArry | slice: 2}}</div>
     <div>{{nunArry | slice: 2 : 4}}</div>
     <div>{{nunArry | slice: 2 : -2}}</div>
@@ -65,6 +66,7 @@
 
   <textarea [(ngModel)]="msg" maxlength="100"></textarea>
   <div>Remaining Chars: {{msg | remaining : 100}}</div>
+  <div class="text-center">{{msg | remaining: 300}}</div>
 
   <textarea [(ngModel)]="msg2" maxlength="200"></textarea>
   <div>Remaining Chars: {{msg2 | remaining : 200}}</div>
